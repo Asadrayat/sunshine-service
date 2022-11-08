@@ -1,0 +1,50 @@
+[
+    {
+        "id": 26,
+        "picture": "https://acimotors-bd.com/assets/images/product/atumobile/foton/1.2-ton-pickup/1.2-ton-tm.jpg",
+        "weight": 2500,
+        "shipping_fee": 340,
+        "title": "2.5ton Truck",
+        "detail": "2 ton light truck, cost-effective flagship product: reliable and advanced engine, high load capacity and safety, stylish and refined appearance, comfortable driving experience, diversified uses, etc. 2 ton light truck - designed for your many needs."
+    },
+    {
+        "id": 38,
+        "picture": "https://www.tkingauto.com/Content/uploads/2020613038/20200520130906a59ca16c37044138b4e0fc85b9cda312.jpg",
+        "weight": 3500,
+        "shipping_fee": 400,
+        "title": "3.5 Ton Truck",
+        "detail": "This is a reliable multipurpose cargo light truck that has an official loading capacity of 3.5T (3,500kgs). It is powered by a 2.8L (2771cc) Isuzu diesel engine with a turbo charger. This truck comes with a manual transmission. It is easy to drive, comfortable, very economical and the spare parts are available across the country. The cargo body has two options: open-body or closed-body. The hydraulic brakes ensure efficient braking and the power steering offers great maneuverability. This truck's interior is modern looking, has comfortable fabric seats and a user friendly instrument console. The closed-body is equipped with a rear view camera to assist during driving. Both open and closed-body trucks have exterior body-lights that increase visibility to other road users when driving at night. The headlamps have daytime running LED's that increase visibility on the road during adverse weather conditions. The T-King 3.5T light truck is the most cost effective in it's category in China. "
+    },
+    {
+        "id": 31,
+        "picture": "https://countrysites-tatamotors-com.s3.ap-southeast-1.amazonaws.com/countrysite/wp-content/uploads/sites/9/2016/05/25125035/7t-gallery-021.jpg",
+        "weight": 7000,
+        "shipping_fee": 450,
+        "title": "7 Ton Truck",
+        "detail": "Our 7-ton cargo trucks, for sale in the light commercial vehicles category, offer efficient solutions for the transport of light cargo. These vehicles offer superior fuel efficiency, faster turnaround time, improved tyres and safety features, and better drivability."
+    },
+    {
+        "id": 26,
+        "picture": "https://www.truck1.eu/img/Truck_Box_truck_Renault_MIDLUM_180_DCI_9_Ton-xxl-1644/1644_4092994910470.jpg",
+        "weight": 9000,
+        "shipping_fee": 500,
+        "title": "9 Ton Truck",
+        "detail": "Our range of tipper trucks is available in the semi-forward and full forward categories. They come fitted with the best-in-class aggregate set-up, power steering, superior braking systems and fully built tipper body options. Designed for long life cycles and tough work conditions, the Tata Motor tipper trucks provide the best solutions for operating economy. "
+    },
+    {
+        "id": 27,
+        "picture": "https://image.made-in-china.com/202f0j00zhRuQHrljogp/Sinotruk-15-Ton-Homan-Tipper-Truck-Cargo-Truck.jpg",
+        "weight": 15000,
+        "shipping_fee": 600,
+        "title": "15 Ton truck",
+        "detail": "Buy and Sell 10 ton - 20 ton trucks online. Check price, loading capacity, specifications, mileage and more of the best 10 ton - 20 ton trucks in India. Some of the best 10 ton - 20-ton truck models in India include Bharat Benz 1923C, Ashok Leyland 1920 and Tata 1412 LPT, available at prices starting from Rs. 30.87 lakhs, Rs. 30.13 lakhs and Rs. 20.88 lakhs respectively. BharatBenz 10 ton truck is famous in this category. The price of the BharatBenz 10 ton truck is also reasonable. To know more about 10 ton - 20 ton truck prices, loading capacity, specifications, mileage and more, tune in to the Truck Junction and select your desired truck model."
+    },
+    {
+        "id": 27,
+        "picture": "https://countrysites-tatamotors-com.s3.ap-southeast-1.amazonaws.com/countrysite/wp-content/uploads/sites/36/2018/06/01051656/25t-tipper-inside-mob.jpg",
+        "weight": 25000,
+        "shipping_fee": 700,
+        "title": "25 Ton Truck",
+        "detail": "Tata Motors range of tipper trucks comes pre-loaded with a host of heavy duty features that ensure excellent performance under difficult conditions and significant reduction in cost of ownership. The tipper trucks are designed for minimising operating costs, with benefits such as higher fuel efficiency and longer tyre life. Select a variant below for more details."
+    }
+]

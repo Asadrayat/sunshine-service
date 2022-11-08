@@ -1,6 +1,6 @@
 import React from 'react';
+// import svg from '../../assest/logo/login.webp';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
     const menuItem =
      < li > <Link to='/'>Home</Link></li>
@@ -20,7 +20,7 @@ return (
                     {menuItem}
                 </ul>
             </div>
-            <Link to='/' className="btn btn-ghost normal-case text-xl"><img alt="" /></Link>
+            <Link to='/' className="btn btn-ghost normal-case text-xl"><img  alt="" /></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
@@ -28,7 +28,7 @@ return (
             </ul>
         </div>
         <div className="navbar-end">
-            <button className="btn btn-outline btn-error">Appointment</button>
+           <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>
         </div>
     </div>
 );

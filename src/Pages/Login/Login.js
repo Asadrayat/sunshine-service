@@ -1,13 +1,24 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import svg from '../../assest/logo/login.webp';
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
 const Login = () => {
+    const { login ,providerLogin} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
+    }
 
     const from = location.state?.from?.pathname || '/';
-    const { login } = useContext(AuthContext);
+    
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -23,20 +34,20 @@ const Login = () => {
                 console.log(currentUser);
 
                 // get jwt token
-              /*   fetch('https://boss-car-server.vercel.app/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(currentUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        // local storage is the easiest but not the best place to store jwt token
-                        localStorage.setItem('boss-token', data.token);
-                        navigate(from, { replace: true });
-                    }); */
+                /*   fetch('https://boss-car-server.vercel.app/jwt', {
+                      method: 'POST',
+                      headers: {
+                          'content-type': 'application/json'
+                      },
+                      body: JSON.stringify(currentUser)
+                  })
+                      .then(res => res.json())
+                      .then(data => {
+                          console.log(data);
+                          // local storage is the easiest but not the best place to store jwt token
+                          localStorage.setItem('boss-token', data.token);
+                          navigate(from, { replace: true });
+                      }); */
 
             })
             .catch(error => console.log(error));
@@ -70,6 +81,17 @@ const Login = () => {
 
                         </div>
                     </form>
+                    <button onClick={handleGoogleSignIn} className="btn mt-3 border text-center d-flex align-items-center justify-content-evenly py-3 px-5 m-auto">
+                        <div className="w-10">
+                            <img
+                                className=" px-2 image-fluid btn-image"
+                                src="https://img.icons8.com/color/344/google-logo.png"
+                                alt=""
+                            />
+                        </div>
+
+                        <p className="fw-bold">Google SignIn</p>
+                    </button>
                     <div>
                         <p className='text-center'>Have an account? <Link to='/signup' className='text-xl  text-orange-600 font-bold'> Sign In</Link></p>
                     </div>

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 // import svg from '../../assest/logo/login.webp';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/Authprovider/Authprovider';
 const Header = () => {
-    const { logOut, user } = useContext();
+    const { logOut, user } = useContext(AuthContext);
     const handleLogout = () => {
         logOut()
             .then()
@@ -11,17 +12,20 @@ const Header = () => {
     const menuItem =
         <>
             < li > <Link to='/'>Home</Link></li>
+            < li > <Link to='/blog'>Blog</Link></li>
+
             {
                 user?.email ?
                     <>
-                        <li><Link to='/orders'>Orders</Link></li>
+                        <li><Link to='/booking'><button className="btn btn-outline btn-warning">Bookings</button></Link></li>
                         <li>
-                            <button onClick={handleLogout} className='btn btn-outline btn-warning'>Sign Out</button>
+                            <button onClick={handleLogout} className='btn btn-outline mt-3 btn-warning'>Sign Out</button>
                         </li>
                     </>
                     :
-                    <li><Link to='/login'>Login</Link></li>
+                    <li><Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link></li>
             }
+
         </>
 
 
@@ -46,7 +50,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>
+
             </div>
         </div>
     );

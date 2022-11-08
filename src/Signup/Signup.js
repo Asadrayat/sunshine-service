@@ -1,8 +1,10 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import svg from '../assest/logo/login.webp';
+import { Link } from 'react-router-dom';
+import svg from '../assest/logo/signup.webp';
 import { AuthContext } from '../Context/Authprovider/Authprovider';
 const Signup = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser ,providerLogin} = useContext(AuthContext);
     const handleSignup = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -13,6 +15,15 @@ const Signup = () => {
                 console.log(user);
             })
             .catch(err => console.error(err));
+    }
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
     }
     return (
         <div className="hero py-12 my-12">
@@ -48,6 +59,20 @@ const Signup = () => {
 
                         </div>
                     </form>
+                    <button onClick={handleGoogleSignIn} className="btn mt-3 border text-center d-flex align-items-center justify-content-evenly py-3 px-5 m-auto">
+                        <div className="w-10">
+                            <img
+                                className=" px-2 image-fluid btn-image"
+                                src="https://img.icons8.com/color/344/google-logo.png"
+                                alt=""
+                            />
+                        </div>
+
+                        <p className="fw-bold">Google SignIn</p>
+                    </button>
+                    <div>
+                        <p className='text-center'>Already have an account? <Link to='/signup' className='text-xl  text-orange-600 font-bold'> Login</Link></p>
+                    </div>
                 </div>
             </div>
         </div>

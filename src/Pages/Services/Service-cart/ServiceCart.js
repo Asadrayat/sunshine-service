@@ -18,7 +18,7 @@ const ServiceCart = ({ service }) => {
                     <div className="badge badge-outline">shipping_fee : ${shipping_fee}</div>
                 </div>
                 <div className="card-actions  ">
-                    <button className='btn btn-outline btn-primary w-full'>Booking</button>
+                    <button className='btn btn-outline btn-primary w-full'>View Details</button>
                 </div>
             </div>
         </div>

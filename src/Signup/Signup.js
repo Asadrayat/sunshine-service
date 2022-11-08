@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import svg from '../assest/logo/login.webp';
+import { AuthContext } from '../Context/Authprovider/Authprovider';
 const Signup = () => {
+    const { createUser } = useContext(AuthContext);
+    const handleSignup = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error(err));
+    }
     return (
         <div className="hero py-12 my-12">
             <div className="hero-content grid grid-cols-2 flex-col lg:flex-row">
@@ -8,7 +21,7 @@ const Signup = () => {
                     <img src={svg} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form  className="card-body">
+                    <form onSubmit={handleSignup} className="card-body">
                         <h1 className="text-5xl font-bold">Signup now!</h1>
                         <div className="form-control">
                             <label className="label">

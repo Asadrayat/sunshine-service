@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import svg from '../../assest/logo/login.webp';
+import { AuthContext } from "../../Context/Authprovider/Authprovider";
 const Login = () => {
-    /* const location = useLocation();
+    const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || '/';
     const { login } = useContext(AuthContext);
     const handleLogin = (event) => {
-        event.preventDefault();
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
@@ -22,7 +23,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 // get jwt token
-                fetch('https://boss-car-server.vercel.app/jwt', {
+              /*   fetch('https://boss-car-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -35,11 +36,11 @@ const Login = () => {
                         // local storage is the easiest but not the best place to store jwt token
                         localStorage.setItem('boss-token', data.token);
                         navigate(from, { replace: true });
-                    });
+                    }); */
 
             })
             .catch(error => console.log(error));
-    } */
+    }
     return (
         <div className="hero my-12">
             <div className="hero-content grid grid-cols-2 flex-col lg:flex-row">
@@ -47,7 +48,7 @@ const Login = () => {
                     <img src={svg} alt="" />
                 </div>
                 <div className="card py-10 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form  className="card-body">
+                    <form onSubmit={handleLogin} className="card-body">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                         <div className="form-control">
                             <label className="label">

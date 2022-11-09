@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/Authprovider/Authprovider';
 import Review from '../../Layout/Review/Review';
+import Reviewdetail from '../Reviewdetail/Reviewdetail';
 
 const Checkout = () => {
   const { user } = useContext(AuthContext);
@@ -24,10 +25,14 @@ const Checkout = () => {
       </div>
       <div className='bg-base-200 p-6 my-12'>
         <p className='text-5xl text-center font-bold'>Review of {title}</p>
-        <div className='flex justify-center my-12'>
+        <div className='flex justify-center gap-10 my-12'>
           {user ? <Review></Review> : <div>  <Link to='/reviews'><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-warning ">Add Your Review</button></Link>  </div>}
 
         </div>
+        <div>
+          <Reviewdetail></Reviewdetail>
+        </div>
+
       </div>
     </div>
 

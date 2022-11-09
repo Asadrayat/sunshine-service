@@ -1,15 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Context/Authprovider/Authprovider';
+import ReviewrRow from '../ReviewrRow/ReviewrRow';
 
 const Reviewdetail = () => {
     const { user } = useContext(AuthContext);
-    const [review, setReview] = useState({});
+    const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch(`http://localhost:5000/services/636b2a9685e513a1b48148b7/reviews`)
             .then(res => res.json())
-            .then(data => setReview(data))
-    }, [setReview])
-    console.log(user);
+            .then(data => {
+                setReviews(data);
+                console.log(data);
+            })
+    }, [user?.email])
+    // console.log(user);
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -23,30 +27,14 @@ const Reviewdetail = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div className="flex items-center space-x-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="font-bold">Hart Hagerty</div>
-                                    <div className="text-sm opacity-50">United States</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            Zemlak, Daniel and Leannon
-                            <br />
-                            <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                        </td>
-
-
-                    </tr>
-
-
+                    {
+                        reviews.map(view => <ReviewrRow
+                            key={view._id}
+                            view={view}
+                        // handleDelete={handleDelete}
+                        // handleStatusUpdate={handleStatusUpdate}
+                        ></ReviewrRow>)
+                    }
                 </tbody>
 
 

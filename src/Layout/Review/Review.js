@@ -21,7 +21,7 @@ const Review = () => {
             email,
             message
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch(`http://localhost:5000/services/${_id}/reviews`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -5,8 +5,7 @@ import { AuthContext } from '../../Context/Authprovider/Authprovider';
 const Review = () => {
     const { _id, title } = useLoaderData();
     const { user } = useContext(AuthContext);
-
-
+    const pic = user.photoURL;
     const handlePlaceOrder = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,31 +13,26 @@ const Review = () => {
         const email = user?.email || 'unregistered';
         const message = form.message.value;
 
-        const order = {
-            service: _id,
+        const review = {
+            service: _id ,
             serviceName: title,
             customer: name,
             email,
-            message
+            message,
+            photo : pic
         }
-        fetch(`http://localhost:5000/services/${_id}/reviews`, {
+        fetch(`http://localhost:5000/reviews?service=${_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(order)
+            body: JSON.stringify(review)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    <div className="toast">
-                        <div className="alert alert-info">
-                            <div>
-                                <span>New message arrived.</span>
-                            </div>
-                        </div>
-                    </div>
+                    alert('Added Review Successfully')
                     form.reset();
 
                 }
@@ -48,7 +42,7 @@ const Review = () => {
     return (
         <div className='py-12'>
             <form onSubmit={handlePlaceOrder}>
-                <h2 className="text-4xl py-4">You are about to order: {title}</h2>
+                <h2 className="text-4xl py-4">Your shpping partner {title}</h2>
                 {/* <h4 className="text-3xl">Price: {price}</h4> */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full py-4  input-bordered" />

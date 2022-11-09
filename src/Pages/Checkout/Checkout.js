@@ -7,7 +7,7 @@ import Reviewdetail from '../Reviewdetail/Reviewdetail';
 const Checkout = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
-  const { title, weight, picture, detail, shipping_fee } = useLoaderData();
+  const { title, weight, picture, detail, shipping_fee,_id } = useLoaderData();
 
   return (
     <div>

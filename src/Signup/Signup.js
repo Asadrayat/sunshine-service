@@ -9,10 +9,11 @@ const Signup = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUser(email, password)
+        const photoURL = event.target.photoUrl.value;
+        createUser(email, password,photoURL)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                console.log(user.photoURL);
             })
             .catch(err => console.error(err));
     }
@@ -54,6 +55,13 @@ const Signup = () => {
                             <input type="text" name="Confirm password" required placeholder="Confirm password" className="input input-bordered" />
 
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <input type="text" name="photoUrl" required placeholder="photoUrl" className="input input-bordered" />
+
+                        </div>
                         <div className="form-control mt-6">
                             <input type="submit" value="Sign Up" className="btn btn-primary" />
 
@@ -71,7 +79,7 @@ const Signup = () => {
                         <p className="fw-bold">Google SignIn</p>
                     </button>
                     <div>
-                        <p className='text-center'>Already have an account? <Link to='/signup' className='text-xl  text-orange-600 font-bold'> Login</Link></p>
+                        <p className='text-center'>Already have an account? <Link to='/login' className='text-xl  text-orange-600 font-bold'> Login</Link></p>
                     </div>
                 </div>
             </div>

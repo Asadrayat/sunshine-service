@@ -23,7 +23,7 @@ const MyReviewsDetails = ({ myreview ,handleDelete }) => {
                 <tr>
                     <th>
                         <label>
-                            <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
+                            <button onClick={() => handleDelete(myreview._id)} className='btn btn-ghost'>X</button>
                         </label>
                     </th>
                     <td>

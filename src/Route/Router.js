@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/reviews',
-                element: <Privateroute><Review></Review></Privateroute>
+                element: <Review></Review>
             },
             {
                 path: '/signup',

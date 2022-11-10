@@ -26,7 +26,6 @@ const Reviewdetail = () => {
 
                         <th>Name</th>
                         <th>Feedback</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>

@@ -39,6 +39,10 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://sunshine-server.vercel.app/services/${params.id}`)
             },
             {
+                path: '/reviews',
+                element: <Review></Review>
+            },
+            {
                 path: '/reviewdetails',
                 element: <Reviewdetail></Reviewdetail>
             },
@@ -49,10 +53,6 @@ const router = createBrowserRouter([
             {
                 path: '/addservices',
                 element: <Privateroute><AddServices></AddServices></Privateroute>
-            },
-            {
-                path: '/reviews',
-                element: <Review></Review>
             },
             {
                 path: '/signup',

@@ -4,8 +4,9 @@ import { AuthContext } from '../../Context/Authprovider/Authprovider';
 
 const Review = () => {
     const { _id, title } = useLoaderData();
+
     const { user } = useContext(AuthContext);
-    const pic = user.photoURL;
+    const pic = user?.photoURL;
     const handlePlaceOrder = event => {
         event.preventDefault();
         const form = event.target;
@@ -14,12 +15,12 @@ const Review = () => {
         const message = form.message.value;
 
         const review = {
-            service: _id ,
+            service: _id,
             serviceName: title,
             customer: name,
             email,
             message,
-            photo : pic
+            photo: pic
         }
         fetch(`https://sunshine-server.vercel.app/reviews?service=${_id}`, {
             method: 'POST',
@@ -42,7 +43,7 @@ const Review = () => {
     return (
         <div className='py-12'>
             <form onSubmit={handlePlaceOrder}>
-                <h2 className="text-4xl py-4">Your shpping partner {title}</h2>
+                <h2 className="text-4xl py-4">Your Review Here {title}</h2>
                 {/* <h4 className="text-3xl">Price: {price}</h4> */}
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                     <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full py-4  input-bordered" />

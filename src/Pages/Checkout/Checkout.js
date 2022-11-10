@@ -26,7 +26,7 @@ const Checkout = () => {
       <div className='bg-base-200 p-6 my-12'>
         <p className='text-5xl text-center font-bold'>Review of {title}</p>
         <div className='flex justify-center gap-10 my-12'>
-          {user ? <Review></Review> : <div>  <Link to='/reviews'><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-warning ">Add Your Review</button></Link>  </div>}
+          {user ? <Review></Review> : <div>  <Link to='/login'><button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg btn-outline btn-warning ">Add Your Review</button></Link>  </div>}
 
         </div>
         <div>

@@ -21,7 +21,7 @@ const Review = () => {
             message,
             photo : pic
         }
-        fetch(`http://localhost:5000/reviews?service=${_id}`, {
+        fetch(`https://sunshine-server.vercel.app/reviews?service=${_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -51,7 +51,7 @@ const Review = () => {
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full mt-6" placeholder="Your Message" required></textarea>
 
-                <input className='btn btn-outline btn-warning mt-4' type="submit" value="Place Your Order" />
+                <input className='btn btn-outline btn-warning mt-4' type="submit" value="Place Your Review" />
             </form>
         </div>
     );

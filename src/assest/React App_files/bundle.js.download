@@ -392,7 +392,7 @@ const Review = () => {
       email,
       message
     };
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://sunshine-server.vercel.app/reviews', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -1555,7 +1555,7 @@ const Reviewdetail = () => {
   } = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(_Context_Authprovider_Authprovider__WEBPACK_IMPORTED_MODULE_1__.AuthContext);
   const [reviews, setReviews] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    fetch('http://localhost:5000/reviews').then(res => res.json()).then(data => {
+    fetch('https://sunshine-server.vercel.app/reviews').then(res => res.json()).then(data => {
       setReviews(data);
       console.log(data);
     });
@@ -1994,7 +1994,7 @@ const Services = () => {
   _s();
   const [services, setServices] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    fetch('http://localhost:5000/services').then(res => res.json()).then(data => setServices(data));
+    fetch('https://sunshine-server.vercel.app/services').then(res => res.json()).then(data => setServices(data));
   }, []);
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)("div", {
     className: "grid grid-cols-3",
@@ -2240,7 +2240,7 @@ const router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_12__.createBrowserRo
       let {
         params
       } = _ref;
-      return fetch(`http://localhost:5000/services/${params.id}`);
+      return fetch(`https://sunshine-server.vercel.app/services/${params.id}`);
     }
   }, {
     path: '/reviewdetail',

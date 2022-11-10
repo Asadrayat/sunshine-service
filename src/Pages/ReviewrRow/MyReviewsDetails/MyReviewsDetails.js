@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MyReviewsDetails = ({ myreview ,handleDelete }) => {
-    
+const MyReviewsDetails = ({ myreview, handleDelete }) => {
+
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -23,7 +23,19 @@ const MyReviewsDetails = ({ myreview ,handleDelete }) => {
                 <tr>
                     <th>
                         <label>
-                            <button onClick={() => handleDelete(myreview._id)} className='btn btn-ghost'>X</button>
+                            {/* The button to open modal */}
+                            <label htmlFor="my-modal" onClick={() => handleDelete(myreview._id)} className="btn btn-ghost">X</label>
+
+                            {/* Put this part before </body> tag */}
+                            <input type="checkbox" id="my-modal" className="modal-toggle" />
+                            <div className="modal">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg">You have Deleted successfully!</h3>
+                                    <div className="modal-action">
+                                        <label htmlFor="my-modal" className="btn">Ok!</label>
+                                    </div>
+                                </div>
+                            </div>
                         </label>
                     </th>
                     <td>

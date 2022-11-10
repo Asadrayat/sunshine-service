@@ -15,7 +15,7 @@ const ServiceCart = ({ service }) => {
                     `${detail.substring(0, 100)}...` : detail
                 }</p>
                 <div className="card-actions justify-start">
-                    <div className="badge badge-outline">Weight : {weight}kg</div>
+                    <div className="badge badge-outline">Weight : {weight}Kg</div>
                     <div className="badge badge-outline">shipping_fee : ${shipping_fee}</div>
                 </div>
                 <div className="card-actions  ">

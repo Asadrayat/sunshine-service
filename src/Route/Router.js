@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <Checkout></Checkout>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://sunshine-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/reviewdetails',

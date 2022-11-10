@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import banner from '../../assest/banner.jpg';
 import About from '../About/About';
-import HomeService from './HomeService/HomeService';
+// import ServiceCart from '../Services/Service-cart/ServiceCart';
+import ServiceHomeCart from './ServiceHomeCart/ServiceHomeCart';
 const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/homeservice';
+        const url = 'https://sunshine-server.vercel.app/services';
         fetch(url)
             .then(res => res.json())
             .then(data => setServices(data))
@@ -22,10 +23,10 @@ const Home = () => {
             <div className='my-24'>
                 <div className='grid grid-cols-3'>
                     {
-                        services.map(service => <HomeService
-                            key={service._id}
-                            service={service}
-                        ></HomeService>)
+                       services.map(srvc =><ServiceHomeCart
+                        key={srvc._id}
+                        srvc={srvc}
+                       ></ServiceHomeCart>).slice(Math.max(services.length - 3, 0))
                     }
                 </div>
                 <div className='flex justify-center'>

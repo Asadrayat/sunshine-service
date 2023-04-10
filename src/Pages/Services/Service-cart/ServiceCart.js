@@ -5,7 +5,7 @@ const ServiceCart = ({ service }) => {
     const { _id, picture, title, detail, shipping_fee, weight } = service;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img className='h-56 w-full' src={picture} alt="Truck" /></figure>
+            <figure><img className='lg:h-56 h-48 w-3/4 lg:w-full' src={picture} alt="Truck" /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {title}
@@ -19,7 +19,7 @@ const ServiceCart = ({ service }) => {
                     <div className="badge badge-outline">shipping_fee : ${shipping_fee}</div>
                 </div>
                 <div className="card-actions  ">
-                    <Link to={`/services/${_id}`}><button className='btn btn-outline btn-primary w-full'>View Details</button></Link>
+                    <Link to={`/projects/${_id}`}><button className='btn btn-outline btn-primary w-full'>View Details</button></Link>
                 </div>
             </div>
         </div>

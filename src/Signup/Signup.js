@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import svg from '../assest/logo/signup.webp';
 import { AuthContext } from '../Context/Authprovider/Authprovider';
 const Signup = () => {
-    const { createUser ,providerLogin} = useContext(AuthContext);
+    const { createUser, providerLogin } = useContext(AuthContext);
+    // const from = location.state?.from?.pathname || '/';
+
     const handleSignup = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
         const photoURL = event.target.photoUrl.value;
-        createUser(email, password,photoURL)
+        createUser(email, password, photoURL)
             .then(result => {
                 const user = result.user;
                 console.log(user.photoURL);
@@ -28,13 +30,13 @@ const Signup = () => {
     }
     return (
         <div className="hero py-12 my-12">
-            <div className="hero-content grid grid-cols-2 flex-col lg:flex-row">
+            <div className="hero-content flex flex-col lg:flex-row">
                 <div className="text-center lg:text-left w-3/4">
                     <img src={svg} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSignup} className="card-body">
-                        <h1 className="text-5xl font-bold">Signup now!</h1>
+                        <h1 className="lg:text-5xl text-2xl font-bold">Signup now!</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>

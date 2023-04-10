@@ -1,12 +1,13 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import svg from '../../assest/logo/login.webp';
 import { AuthContext } from "../../Context/Authprovider/Authprovider";
 const Login = () => {
-    const { login ,providerLogin} = useContext(AuthContext);
+    const { login, providerLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    const [loginUserEmail, setLoginUserEmail] = useState('');
     const googleProvider = new GoogleAuthProvider();
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -18,7 +19,7 @@ const Login = () => {
     }
 
     const from = location.state?.from?.pathname || '/';
-    
+
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -30,37 +31,23 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
+                setLoginUserEmail(event.email);
 
                 console.log(currentUser);
-
-                // get jwt token
-                /*   fetch('https://boss-car-server.vercel.app/jwt', {
-                      method: 'POST',
-                      headers: {
-                          'content-type': 'application/json'
-                      },
-                      body: JSON.stringify(currentUser)
-                  })
-                      .then(res => res.json())
-                      .then(data => {
-                          console.log(data);
-                          // local storage is the easiest but not the best place to store jwt token
-                          localStorage.setItem('boss-token', data.token);
-                          navigate(from, { replace: true });
-                      }); */
+                navigate(from, { replace: true });
 
             })
             .catch(error => console.log(error));
     }
     return (
         <div className="hero my-12">
-            <div className="hero-content grid grid-cols-2 flex-col lg:flex-row">
+            <div className="hero-content flex flex-col lg:flex-row">
                 <div className="text-center lg:text-left w-3/4">
                     <img src={svg} alt="" />
                 </div>
                 <div className="card py-10 flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="lg:text-5xl text-2xl font-bold">Login now!</h1>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>

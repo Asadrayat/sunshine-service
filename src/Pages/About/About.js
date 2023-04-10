@@ -3,10 +3,10 @@ import img from '../../assest/about.jpg'
 const About = () => {
     return (
         <div className="hero  bg-base-200">
-            <div className="hero-content flex-col lg:grid grid-cols-2">
-                <img src={img} className="w-full rounded-lg shadow-2xl" />
+            <div className="hero-content flex-col lg:grid lg:grid-cols-2">
+                <img src={img} className="mx-auto w-3/4 lg:w-full rounded-lg shadow-2xl" />
                 <div>
-                    <h1 className="text-5xl font-bold">Benefit of registering your wegon from our site!</h1>
+                    <h1 className="lg:lg:text-5xl  text-2xl font-bold">Benefit of registering your wegon from our site!</h1>
                     <p className="py-6">We will to provide attarective rent. Fast bookings Benefit. Benefit of registering your vehicle from our site,
 
                         We will  provide attractive rent. Fast bookings at any pickup point.

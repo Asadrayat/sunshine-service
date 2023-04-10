@@ -8,7 +8,7 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <div className='grid grid-cols-3'>
+        <div className='grid lg:grid-cols-3 grid-cols-1 align-middle'>
             {
                 services.map(service => <ServiceCart
                 key={service.id}

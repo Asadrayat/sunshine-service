@@ -16,12 +16,12 @@ const Home = () => {
 
     return (
         <div >
-            <img className="rounded" src={banner} alt="" />
+            <img className="rounded w-full lg:w-full" src={banner} alt="" />
             <div>
-                <p className='text-5xl font-bold text-center mt-20'>Catagories Of Truck That meets your need</p>
+                <p className='lg:lg:text-5xl text-2xl font-bold text-xl text-center mt-20'>Catagories Of Truck  That meets your need</p>
             </div>
             <div className='my-24'>
-                <div className='grid grid-cols-3'>
+                <div className='grid lg:grid-cols-3 grid-cols-1 mx-4'>
                     {
                        services.map(srvc =><ServiceHomeCart
                         key={srvc._id}

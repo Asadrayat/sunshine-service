@@ -22,7 +22,7 @@ const Authprovider = ({ children }) => {
         setLoading(true);
         setTimeout(()=>{
             setLoading(false)
-        },3500)
+        })
         return signOut(auth);
     }
     if (loading) {

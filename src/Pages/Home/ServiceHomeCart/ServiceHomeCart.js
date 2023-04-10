@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const ServiceHomeCart = ({srvc}) => {
     const { _id, picture, title, detail, shipping_fee, weight } = srvc;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-        <figure><img className='h-56 w-full' src={picture} alt="Truck" /></figure>
+        <div className="card w-full mx-auto lg:w-96 bg-base-100 shadow-xl">
+        <figure><img className='h-56 mx-auto w-3/4 lg:w-full' src={picture} alt="Truck" /></figure>
         <div className="card-body">
             <h2 className="card-title">
                 {title}
@@ -18,7 +18,7 @@ const ServiceHomeCart = ({srvc}) => {
                 <div className="badge badge-outline">Weight : {weight}Kg</div>
                 <div className="badge badge-outline">shipping_fee : ${shipping_fee}</div>
             </div>
-            <div className="card-actions  ">
+            <div className="card-actions my-3  ">
                 <Link to={`/services/${_id}`}><button className='btn btn-outline btn-primary w-full'>View Details</button></Link>
             </div>
         </div>
